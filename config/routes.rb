@@ -11,8 +11,6 @@ Rails.application.routes.draw do
   end
 
   namespace :dashboard do
-    resources :users do
-      resources :meals, only: [:index, :show]
-    end
+    resources :meals, only: [:index, :show]
   end
 end

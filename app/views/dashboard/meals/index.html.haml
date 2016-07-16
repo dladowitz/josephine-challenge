@@ -1,12 +1,13 @@
 %h1
   Meals Dashboard for
   = @user.first_name
+  = @user.last_name
 
 %ul
   - @meals.each do |meal|
     %h2
       Meal:
-      = link_to meal.title, dashboard_user_meal_path(@user, meal)
+      = link_to meal.title, dashboard_meal_path(meal)
 
     -# TODO create helper methods for these
     %h3= "Order Count: #{meal.orders.count}"

@@ -1,5 +1,5 @@
 class Dashboard::MealsController < ApplicationController
-  before_action :set_user
+  before_action :set_user, :authorize
 
   def index
     @meals = @user.meals
@@ -13,6 +13,6 @@ class Dashboard::MealsController < ApplicationController
   private
 
   def set_user
-    @user = User.find params[:user_id]
+    @user = current_user
   end
 end
