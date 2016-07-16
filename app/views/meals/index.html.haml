@@ -1,0 +1,6 @@
+%h1 Buy Some Meals Yo!
+
+#meals
+  %ul
+    - @meals.each do |meal|
+      %li= link_to meal.title, meal_path(meal)
