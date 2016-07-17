@@ -11,5 +11,5 @@
 %h2 Revenue
 -# TODO create helper methods for these
 %h3= "Order Count: #{@orders.count}"
-%h3= "Total Revenue: #{@orders.count * @meal.price}"
+%h3= "Total Revenue: #{number_to_currency @orders.count * @meal.price}"
 %hr

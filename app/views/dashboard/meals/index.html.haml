@@ -11,5 +11,5 @@
 
     -# TODO create helper methods for these
     %h3= "Order Count: #{meal.orders.count}"
-    %h3= "Total Revenue: #{meal.orders.count * meal.price}"
+    %h3= "Total Revenue: #{number_to_currency meal.orders.count * meal.price}"
     %hr
