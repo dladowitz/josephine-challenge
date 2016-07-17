@@ -23,39 +23,34 @@ RSpec.describe Dashboard::MealsController, type: :controller do
         expect(assigns(:user)).to eq user
       end
 
-      context "With orders in the the database" do
-        before { my_meal.orders.create(user: other_user) }
-
-        it "should find all my meals" do
-          subject
-          expect(assigns(:meals).count).to eq user.meals.count
-        end
+      it "should find all my meals" do
+        subject
+        expect(assigns(:meals).count).to eq user.meals.count
       end
     end
   end
 
-  # describe "GET #show" do
-  #   subject { get :show, id: others_meal.id }
-  #
-  #   context 'with a logged in user' do
-  #     before { session[:user_id] = user.id }
-  #
-  #     it "returns the show template" do
-  #       subject
-  #       expect(response).to render_template :show
-  #     end
-  #
-  #     it "finds the correct meal" do
-  #       subject
-  #       expect(assigns(:meal).title).to eq others_meal.title
-  #     end
-  #   end
-  #
-  #   context 'with NO logged in user' do
-  #     it "returns the login page" do
-  #       subject
-  #       expect(response).not_to render_template :show
-  #     end
-  #   end
-  # end
+  describe "GET #show" do
+    subject { get :show, id: my_meal.id }
+
+    # since this is goig to be used often I'd build out: it_behaves_like "requires sign in"
+    context 'with a logged in user' do
+      before { session[:user_id] = user.id }
+
+      it "returns the show template" do
+        subject
+        expect(response).to render_template :show
+      end
+
+      it "should find the correct user" do
+        subject
+        expect(assigns(:user)).to eq user
+      end
+
+      it "should find the correct meal" do
+        subject
+        expect(assigns(:meal)).to eq my_meal
+      end
+    end
+  end
 end
