@@ -5,11 +5,12 @@ gem 'rails', '4.2.6'
 gem 'bcrypt'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'faker'
+gem 'font-awesome-rails'
 gem 'haml-rails'
 gem 'jquery-rails'
 gem 'pg'
 gem 'sass-rails', '~> 5.0'
-gem 'turbolinks'
+# gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 
 group :development, :test do

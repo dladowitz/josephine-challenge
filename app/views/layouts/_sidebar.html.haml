@@ -1,0 +1,37 @@
+%nav.navbar-default.navbar-static-side{:role => "navigation"}
+  .sidebar-collapse
+    %ul#side-menu.nav
+      %li.nav-header
+        .dropdown.profile-element
+          = image_tag("/landing/images/logos/josephine-logo.svg")
+          -# %h2.text-primary
+          -#   Josephine
+          %h3
+            %span
+              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                %span.clear
+                  %span.block.m-t-xs
+                    %strong.font-bold
+                      = link_to "#{current_user.first_name.capitalize} #{current_user.last_name.capitalize}", ""
+        .logo-element
+          IN+
+      %li{:class => ("active" if current_page?(dashboard_meals_path))}
+        %a{:href => "#{dashboard_meals_path}" }
+          %i.fa.fa-dashboard.fa-2x
+          %span.nav-label Meals Dashboard
+
+      -# This is crasy talk
+      %li{:class => ("active" if current_page?(meals_path))}
+        = link_to "/meals" do
+          %i.fa.fa-shopping-cart.fa-2x
+          %span.nav-label Buy Meals
+
+      -# %li
+      -#   %a{:href => ""}
+      -#     %i.fa.fa-user.fa-2x
+      -#     %span.nav-label Find Users
+
+      %li
+        = link_to "/logout" do
+          %i.fa.fa-sign-out.fa-2x
+          %span.nav-label Log Out

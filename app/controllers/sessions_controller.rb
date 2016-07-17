@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  layout "landing_page"
+  layout "landing_page", except: :destroy
 
   def index
   end
@@ -17,6 +17,6 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-    redirect_to '/'
+    redirect_to root_path
   end
 end

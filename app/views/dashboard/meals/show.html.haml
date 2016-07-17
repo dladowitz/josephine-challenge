@@ -1,15 +1,36 @@
 %h1
-  Meal Dashboard for
+  Dashboard
+  |
   = @meal.title
 
-%h2 Customers
-%ul
-  - @orders.each do |order|
-    %li= "#{order.user.first_name} #{order.user.last_name}"
+%hr
+.col-md-10
+  %h2 Customers
+  %h3
+    %table.table.table-hover
+      %thead
+        %tr
+          %th Name
+          %th Email
+          %th Date
+      %tbody
+        - @orders.each do |order|
+          %tr
+            %td= "#{order.user.first_name} #{order.user.last_name}"
+            %td= order.user.email
+            %td= order.created_at
 %hr
 
-%h2 Revenue
--# TODO create helper methods for these
-%h3= "Order Count: #{@orders.count}"
-%h3= "Total Revenue: #{number_to_currency @orders.count * @meal.price}"
-%hr
+.col-md-10
+  %h2 Revenue
+  %h3
+    %table.table.table-hover
+      %thead
+        %tr
+          %th Order Count
+          %th Total Revenue
+      %tbody
+        %tr
+          %td= @orders.count
+          -# TODO create helper methods for thes
+          %td= number_to_currency @orders.count * @meal.price

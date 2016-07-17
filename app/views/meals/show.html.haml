@@ -1,8 +1,19 @@
-%h1= "Title: #{@meal.title}"
-%h2= "Price: #{number_to_currency @meal.price}"
-%h3= "Made by: #{@meal.user.first_name}"
+%h1= @meal.title
 
-- if meal_unordered?(@meal)
-  = button_to 'Order This Meal', meal_orders_path(@meal, order: {notes: "No Cheese"}), method: :post
-- else
-  You've successfully ordered this meal!
+
+.col-md-6
+  .widget-head-color-box.navy-bg.p-lg.text-center.meal-box-large
+    .m-b-md
+      %h2.font-bold.no-margins
+        =h truncate(@meal.title, :length => 40)
+      %h3
+        made by
+        = @meal.user.first_name
+    %img.img-circle.meal-circle-border.m-b-md{:alt => "profile", :src => "/assets/food#{rand(12)}.png", :width => 300, :height => 300}/
+    %div.m-b-md
+      %span.meal-box-price= number_to_currency @meal.price
+
+    - if meal_unordered?(@meal)
+      = button_to 'Order This Meal', meal_orders_path(@meal, order: {notes: "No Cheese"}), class: "btn btn-lg btn-outline btn-default", method: :post
+    - else
+      %h2 You've successfully ordered this meal!

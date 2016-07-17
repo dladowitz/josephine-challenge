@@ -1,15 +1,18 @@
 %h1
-  Meals Dashboard for
-  = @user.first_name
-  = @user.last_name
+  Dashboard | All Meals
+  %hr
 
-%ul
-  - @meals.each do |meal|
-    %h2
-      Meal:
-      = link_to meal.title, dashboard_meal_path(meal)
-
-    -# TODO create helper methods for these
-    %h3= "Order Count: #{meal.orders.count}"
-    %h3= "Total Revenue: #{number_to_currency meal.orders.count * meal.price}"
-    %hr
+%h2
+  .col-md-10
+    %table.table.table-hover
+      %thead
+        %tr
+          %th Meal Title
+          %th Order Count
+          %th Total Revenue
+      %tbody
+        - @meals.each do |meal|
+          %tr
+            %td= link_to meal.title, dashboard_meal_path(meal)
+            %td= meal.orders.count
+            %td= number_to_currency meal.orders.count * meal.price #TODO create helper

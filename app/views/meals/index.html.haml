@@ -1,11 +1,19 @@
-%h1 Buy Some Meals and Support Your Community
+%h1 Buy Meals | Support Your Community
 
 #meals
   %ul
     - @meals.each do |meal|
-      %li
-        = link_to meal.title, meal_path(meal)
-        | by
-        = meal.user.first_name
-        |
-        = number_to_currency meal.price
+      = link_to meal_path meal do
+        .col-md-4
+          .widget-head-color-box.navy-bg.p-lg.text-center.meal-box
+            .m-b-md
+              %h2.font-bold.no-margins
+                =h truncate(meal.title, :length => 40)
+              %medium
+                made by
+                = meal.user.first_name
+            %img.img-circle.meal-circle-border.m-b-md{:alt => "profile", :src => "/assets/food#{rand(12)}.png", :width => 200, :height => 200}/
+            %div
+              %span.meal-box-price= number_to_currency meal.price
+              -# |
+              -# %span= meal.created_at
