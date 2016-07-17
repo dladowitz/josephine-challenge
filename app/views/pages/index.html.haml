@@ -1,0 +1,28 @@
+/
+  HERO
+  \=================================
+%section#hero.hero-section.hero-layout-simple.hero-fullscreen.section.section-dark
+  .section-background
+    / IMAGE BACKGROUND
+    /
+      <div class="section-background-image parallax" data-stellar-ratio="0.4">
+      <img src="images/backgrounds/hero-bg-fullscreen-cta.jpg" style="opacity: 0.3;">
+      </div>
+    / VIDEO BACKGROUND
+    .section-background-video.section-background-dot-overlay.parallax{"data-stellar-ratio" => "0.4"}
+      %video{:autoplay => "", :loop => "", :muted => "", :poster => "landing/images/backgrounds/video-fallback-bg.jpg", :preload => "auto", :style => "opacity: 0.3;"}
+        %source{:src => "landing/videos/josephine3_1.mp4", :type => "video/mp4"}
+          %source{:src => "landing/videos/video-bg.mp4", :type => "video/mp4"}
+            %source{:src => "landing/videos/video-bg.ogv", :type => "video/ogg"}
+              %source{:src => "landing/\"videos/video-bg.webm\"", :type => "video/webm"}
+  .container
+    .hero-content
+      .hero-content-inner
+        .row
+          .col-md-10.col-md-offset-1
+            .hero-heading.text-center{"data-animation" => "fadeIn"}
+              %h1.hero-title Josephine
+              %p.hero-tagline Home cooked meals from your neighbors
+            %p.hero-buttons.text-center
+              %a.btn.btn-lg.btn-default{:href => "#"} Learn More
+              %a.btn.btn-lg.btn-primary{:href => "/login"} Log In Now

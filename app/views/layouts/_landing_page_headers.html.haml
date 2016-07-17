@@ -1,0 +1,29 @@
+%header#header.header-section.section.section-dark.navbar.navbar-fixed-top
+  .container-fluid
+    .navbar-header.navbar-left
+      / RESPONSIVE MENU BUTTON
+      %button.navbar-toggle{"data-target" => "#navigation", "data-toggle" => "collapse", :type => "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      / HEADER LOGO
+      %a.navbar-logo.navbar-brand{:href => "/"}
+        %img{:src => "landing/images/logos/josephine-logo.svg"}/
+        Josephine
+    %nav#navigation.navigation.navbar-collapse.collapse.navbar-right
+      / NAVIGATION LINKS
+      %ul#header-nav.nav.navbar-nav
+        %li
+          %a.hidden{:href => "#hero"} Top
+        %li
+          %a{:href => "#about"} About
+        %li
+          %a{:href => "#how-it-works"} How it Works
+        %li
+          %a{:href => "#video"} Watch Video
+        %li
+          %a{:href => "#team"} The Team
+        / HEADER ACTION BUTTON
+        %li.header-action-button
+          %a.btn.btn-primary{:href => "/login"} Log In

@@ -1,1 +1,35 @@
-= yield
+!!!
+/[if lt IE 7 ] <html class="ie ie6" lang="en">
+/[if IE 7 ] <html class="ie ie7" lang="en">
+/[if IE 8 ] <html class="ie ie8" lang="en">
+/ [if (gte IE 9)|!(IE)]><!
+%html{:lang => "en"}
+  / <![endif]
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "width=device-width, initial-scale=1, maximum-scale=1", :name => "viewport"}/
+    / FAVICONS
+    %link{:href => "landing/images/favicons/favicon.ico", :rel => "icon"}/
+    %link{:href => "landing/images/favicons/apple-touch-icon.png", :rel => "apple-touch-icon"}/
+    /
+      CSS
+      \=================================
+    / GOOGLE FONTS
+    %link{:href => "http://fonts.googleapis.com/css?family=Montserrat:400,700", :rel => "stylesheet"}/
+    %link{:href => "http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800", :rel => "stylesheet"}/
+    / LIBRARIES CSS
+    %link{:href => "landing/css/bootstrap.min.css", :rel => "stylesheet"}/
+    %link{:href => "landing/css/font-awesome.min.css", :rel => "stylesheet"}/
+    %link{:href => "landing/css/animate.min.css", :rel => "stylesheet"}/
+    / SPECIFIC CSS
+    %link{:href => "landing/css/style.css", :rel => "stylesheet"}/
+    / COLORS
+    %link#color-css{:href => "landing/css/colors/red.css", :rel => "stylesheet"}/
+
+  %body.enable-animations.enable-preloader
+    #document.document
+      -# = render 'layouts/messages'
+      = render "layouts/landing_page_headers"
+      = yield
+      = render "layouts/landing_page_footer"

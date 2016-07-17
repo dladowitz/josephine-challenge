@@ -1,0 +1,32 @@
+/
+  HERO
+  \=================================
+%section#hero.hero-section.hero-layout-simple.hero-fullscreen.section.section-dark
+  .section-background
+    / IMAGE BACKGROUND
+    /
+      <div class="section-background-image parallax" data-stellar-ratio="0.4">
+      <img src="images/backgrounds/hero-bg-fullscreen-cta.jpg" style="opacity: 0.3;">
+      </div>
+    / VIDEO BACKGROUND
+    .section-background-video.section-background-dot-overlay.parallax{"data-stellar-ratio" => "0.4"}
+      %video{:autoplay => "", :loop => "", :muted => "", :poster => "landing/images/backgrounds/video-fallback-bg.jpg", :preload => "auto", :style => "opacity: 0.3;"}
+        %source{:src => "landing/videos/farmers_market_1_1.mp4", :type => "video/mp4"}
+          %source{:src => "landing/videos/video-bg.mp4", :type => "video/mp4"}
+            %source{:src => "landing/videos/video-bg.ogv", :type => "video/ogg"}
+              %source{:src => "landing/\"videos/video-bg.webm\"", :type => "video/webm"}
+  .container
+    .hero-content
+      .hero-content-inner
+        .row
+          .col-xs-5.col-xs-offset-3
+            = form_tag '/login' do
+              %h1
+                Sign In
+              .form-group
+                = label_tag :email
+                = email_field_tag :email, nil, class: "form-control"
+              .form-group
+                = label_tag :password
+                = password_field_tag :password, nil, class: "form-control"
+              = submit_tag "Sign In", class: "btn btn-primary btn-lg", onclick: "ga('send', 'event', 'form', 'submited', 'user signin', '6')"
