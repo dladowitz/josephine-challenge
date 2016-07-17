@@ -1,5 +1,5 @@
 %h1= "Title: #{@meal.title}"
-%h2= "Price: #{@meal.price}"
+%h2= "Price: #{number_to_currency @meal.price}"
 %h3= "Made by: #{@meal.user.first_name}"
 
 - if meal_unordered?(@meal)

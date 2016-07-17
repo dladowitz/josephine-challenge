@@ -1,6 +1,11 @@
-%h1 Buy Some Meals Yo!
+%h1 Buy Some Meals and Support Your Community
 
 #meals
   %ul
     - @meals.each do |meal|
-      %li= link_to meal.title, meal_path(meal)
+      %li
+        = link_to meal.title, meal_path(meal)
+        | by
+        = meal.user.first_name
+        |
+        = number_to_currency meal.price

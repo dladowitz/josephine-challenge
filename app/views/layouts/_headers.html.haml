@@ -1,4 +1,7 @@
-%h3
-  = link_to "Buy Meals", "/"
-  |
-  = link_to "View Dashboard", dashboard_meals_path
+- if current_user
+  %h3
+    = link_to "Buy Meals", "/"
+    |
+    = link_to "View Dashboard", dashboard_meals_path
+    |
+    = link_to "Log Out", '/logout'
