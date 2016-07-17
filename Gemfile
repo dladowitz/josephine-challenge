@@ -4,6 +4,7 @@ gem 'rails', '4.2.6'
 
 gem 'bcrypt'
 gem 'coffee-rails', '~> 4.1.0'
+gem 'faker'
 gem 'haml-rails'
 gem 'jquery-rails'
 gem 'pg'
@@ -13,7 +14,6 @@ gem 'uglifier', '>= 1.3.0'
 
 group :development, :test do
   gem 'byebug'
-  gem 'faker'
   gem 'factory_girl_rails'
   gem 'pry-rails'
   gem 'rspec-rails'
