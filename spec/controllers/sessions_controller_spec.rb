@@ -15,7 +15,7 @@ RSpec.describe SessionsController, type: :controller do
         post :create, email: user.email, password: user.password
       end
       it 'logs in an existing user and redirects to homepage' do
-        should redirect_to(root_path)
+        should redirect_to(meals_path)
       end
     end
 
@@ -31,8 +31,8 @@ RSpec.describe SessionsController, type: :controller do
 
   describe "GET #destroy" do
     before(:each) { get :destroy }
-    it "redirects to login path" do
-      should redirect_to(login_path)
+    it "redirects to root path" do
+      should redirect_to(root_path)
     end
   end
 
