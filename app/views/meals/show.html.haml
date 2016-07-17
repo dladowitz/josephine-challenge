@@ -9,7 +9,7 @@
       %h3
         made by
         = @meal.user.first_name
-    %img.img-circle.meal-circle-border.m-b-md{:alt => "profile", :src => "/assets/food#{rand(12)}.png", :width => 300, :height => 300}/
+    %img.img-circle.meal-circle-border.m-b-md{:alt => "profile", :src => "/images/food#{rand(12)}.png", :width => 300, :height => 300}/
     %div.m-b-md
       %span.meal-box-price= number_to_currency @meal.price
 
