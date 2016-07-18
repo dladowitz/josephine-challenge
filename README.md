@@ -1,3 +1,44 @@
+## Challenge Solution
+
+Hi Josephine Team, first off thanks for designing a challenge that tests skills used daily on the job instead of asking about time complexity of Binary Trees. 
+
+### Styling
+I added a bunch of styling so I've deployed to heroku for easy viewing. I haven't tested assets while cloning the repo so I'd recommend just viewing the UI online rather than getting setup locally. 
+<br>
+You can log in here: [https://josephine-challenge.herokuapp.com/](https://josephine-challenge.herokuapp.com/).
+<br>
+**Email:** hello@josephine.com, **Password:** password
+<br>
+
+Just to be clear, I didn't design the layout or do the heavy front end work. I generally find great templates then pick and choose elements from them for an awesome result. In this case I used one template for the landing/sigin pages and another of the marketplace/dashboard. 
+
+
+### Stories. 
+All four stories are completed. For Story 2, I didn't really understand: 
+
+> And I should see a message that says "You've successfully ordered this meal" if I haven't ordered that meal yet.
+
+I interpreted this to mean you SHOULD see the message if you HAVE ordred the meal already.
+
+### Testing
+All new models and controllers are tested. Generally I'd like to add Capybara integrations tests, but didn't have time here. 
+
+
+### Time Spent
+For full transparency I went way over the time limits. 
+I built all the stories by TDD, which took about 4 hours. 
+(30 min was debugging a few setup/OS issues.)
+
+I spent another 4 hrs on the styling. I figured styling was a bonus so felt fine going way over the time limit.
+
+<br>
+<br>
+<br>
+
+
+
+
+
 ## Josephine Engineering Challenge Overview
 
 ### Background
