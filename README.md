@@ -9,6 +9,7 @@ You can log in here: [https://josephine-challenge.herokuapp.com/](https://joseph
 <br>
 **Email:** hello@josephine.com, **Password:** password
 <br>
+Note its on a free tier so will likely take 60 seconds to spin up.
 
 Just to be clear, I didn't design the layout or do the heavy front end work. I generally find great templates then pick and choose elements from them for an awesome result. In this case I used one template for the landing/sigin pages and another of the marketplace/dashboard. 
 
